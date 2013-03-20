@@ -49,5 +49,14 @@ buster.testCase('romanToDecimal', {
     },
     'returns 3994 for MMMCMXCIV': function () {
         assert.equals(romanToDecimal('MMMCMXCIV'), 3994);
+    },
+    'returns 9000 for MX̄': function () {
+        assert.equals(romanToDecimal('MX̄'), 9000);
+    },
+    'returns 9999 for MX̄CMXCIX': function () {
+        assert.equals(romanToDecimal('MX̄CMXCIX'), 9999);
+    },
+    'test bloody large': function () {
+        assert.equals(romanToDecimal('M̄V̄̄C̄M̄X̄C̄X̄V̄MX̄CMXCIX'), 49949999);
     }
 });
